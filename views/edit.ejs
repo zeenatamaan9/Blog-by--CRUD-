@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit your Content</title>
+</head>
+<body>
+    <h1>Edit Your Content</h1>
+         <h3 class="title" >Title: <%= post.Title %></h3>
+            <p class="author" >Author: <%= post.Author %></p> 
+    <form method="post"  action="/posts/<%= post.id %>?_method=PATCH">
+            <textarea class="content" cols="40" rows="20" name="Content"> <%= post.Content %> </textarea>
+            <button>Update</button>
+    </form>
+</body>
+</html>

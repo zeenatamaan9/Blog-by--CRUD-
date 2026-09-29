@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog page</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+    <div class="head">
+         <h1>Blog Posts</h1>
+    </div>
+
+    <div class="create">
+    <a href="/posts/new" class="create"><button>Create New Blogs</button> </a>
+    </div>
+
+     <% for( post of posts){  %>
+        <div class="post">
+        
+            <h3 class="title" >Title: <%= post.Title %></h3>
+            <p class="author" >Author: <%= post.Author %></p> 
+            <p class="content">Content: <%= post.Content %> </p>
+            <a href="/posts/<%=post.id%>" class="detail">See Details</a>
+            <a href="/posts/<%=post.id%>/edit" class="detail">  Edit</a>
+            <br>
+            <br>
+            <form method="post" action="/posts/<%=post.id %>?_method=DELETE">
+
+                <button>DELETE</button>
+
+            </form>
+
+        </div>
+        <hr>
+     <% } %>
+</body>
+</html>
